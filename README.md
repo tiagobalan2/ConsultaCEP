@@ -8,6 +8,9 @@ Consulta de endereços completos a partir do CEP.
 
 ### Extensão do Chrome:
 
+<img width="281" alt="image" src="https://github.com/tiagobalan2/ConsultaCEP/assets/126524905/86264a95-1caf-45de-88bc-46497897e40d">
+
+
 Integração com a barra de pesquisa do Chrome.
 Consulta rápida de CEPs diretamente na página que você está acessando.
 Exibição de informações de endereço em um pop-up.
