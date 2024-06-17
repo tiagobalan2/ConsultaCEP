@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "busca cep",
+    "description": "testando extensao de busca cep",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "action": {
+        "default_popup": "index.html"
+    }
+  }
+  

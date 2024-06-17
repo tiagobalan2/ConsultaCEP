@@ -1,40 +1,51 @@
-const numeroCEP = document.querySelector(".cep");
-const botaoBusca = document.querySelector(".buscar");
-const infos = document.querySelector(".resultado");
+const form = document.querySelector("form");
+const input = document.querySelector("input")
+const button = document.querySelector("button")
+
 
 function buscarCEP() {
-    const cep = numeroCEP.value;
+    const numeroCEP = input.value;
+    const retorno = document.querySelector(".retorno")
 
-    fetch('https://viacep.com.br/ws/' + cep + '/json/', 
+
+
+    fetch('https://viacep.com.br/ws/' + numeroCEP + '/json/', 
         {
         mode: 'cors' // Explicitly setting the mode to 'cors'
         }
     )
     .then(function(res) {
+        if(!res.ok) {
+            throw new Error("CEP não pode ser consultado")
+        }
         return res.json();
     })
     .then(function(data) {
         console.log(data)
-        infos.innerHTML = `
+        retorno.innerHTML = `
 
-        CEP: ${data.cep} <hr>
-        Logradouro: ${data.logradouro} <hr>
-        Complemento: ${data.complemento} <hr>
-        Bairro: ${data.bairro} <hr>
-        Localidade: ${data.localidade} <hr>
-        UF: ${data.uf} <hr>
-        DDD: ${data.ddd}`
+        <span class="diferente">CEP:</span> <br> ${data.cep} <hr>
+        <span class="diferente">Logradouro:</span> <br> ${data.logradouro}  <hr>
+        <span class="diferente">Complemento:</span> <br> ${data.complemento} <hr>
+        <span class="diferente">Bairro:</span> <br> ${data.bairro} <hr>
+        <span class="diferente">Localidade:</span> <br> ${data.localidade}  <hr>
+        <span class="diferente">UF:</span> <br> ${data.uf} <hr>
+        <span class="diferente">DDD:</span> <br> ${data.ddd} <br>`
         limpar();
+
     })
     .catch(function(error) {
         console.log(error);
+        retorno.innerHTML = `Erro ao consultar o CEP`
     });
+
 }
 
-botaoBusca.addEventListener("click", buscarCEP);
+button.addEventListener("click", buscarCEP);
+
 
 function limpar() {
     
-    numeroCEP.value = "";
-    numeroCEP.placeholder = "Digite o CEP";
+    input.value = "";
+    input.placeholder = "Digite o CEP";
 }
