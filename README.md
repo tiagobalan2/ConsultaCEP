@@ -1,8 +1,9 @@
 # Repositório Consulta CEP
-Este repositório contém um site básico de consulta de CEP e uma extensão do Chrome para consulta de CEP.
+Este repositório contém um site responsivo básico de consulta de CEP e uma extensão do Chrome para consulta de CEP.
 
 ## Funcionalidades
 ### Site:
+<img width="960" alt="image" src="https://github.com/tiagobalan2/ConsultaCEP/assets/126524905/6d877598-0ee4-4e71-ae83-e1cc5d5f54df">
 
 Consulta de endereços completos a partir do CEP.
 
